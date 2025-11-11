@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const CTA = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 px-4 bg-gradient-hero relative overflow-hidden">
       {/* Decorative Elements */}
@@ -28,6 +31,7 @@ const CTA = () => {
               size="lg"
               variant="secondary"
               className="bg-background text-foreground hover:bg-background/90 shadow-soft text-lg px-8 py-6 rounded-full"
+              onClick={() => navigate('/auth')}
             >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -35,6 +39,7 @@ const CTA = () => {
             <Button 
               size="lg"
               className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-full"
+              onClick={() => navigate('/auth')}
             >
               See Pricing
             </Button>

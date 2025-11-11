@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -36,6 +39,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-hero text-primary-foreground hover:opacity-90 transition-opacity shadow-soft text-lg px-8 py-6 rounded-full"
+              onClick={() => navigate('/auth')}
             >
               Get Started Free
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -44,6 +48,7 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               className="border-2 text-lg px-8 py-6 rounded-full"
+              onClick={() => navigate('/auth')}
             >
               Watch Demo
             </Button>
